@@ -31,6 +31,7 @@ function App() {
 
   return (
     <StyledApp>
+      <h1>Tonpool</h1>
       <AppContainer>
         <FlexBoxCol>
           <FlexBoxRow>
