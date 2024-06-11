@@ -25,6 +25,9 @@ const SmallText = styled.p`
   font-weight: 400;
   margin: 0;
   padding: 20px 0px 12px;
+  @media (max-width: 520px) {
+    font-size: 16px;
+  }
 `;
 
 const LargeText = styled.p`
@@ -32,6 +35,9 @@ const LargeText = styled.p`
   font-size: 30px;
   font-weight: 700;
   margin: 0;
+  @media (max-width: 520px) {
+    font-size: 26px;
+  }
 `;
 
 const LogoAndInfo = () => {
