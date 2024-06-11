@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import RectangleImage from "../images/rectangle.svg";
+import BarImage from "../images/bar_img.svg";
 
 const PoolContainer = styled.div`
   width: 100%;
@@ -46,12 +47,75 @@ const PoolTag = styled.p`
 `;
 
 const MiddleContent = styled.div`
-  height: 100px;
+  height: 80px;
   background: #f7d64b;
+  padding: 16px 20px;
+  display: flex;
+`;
+
+const MiddleLeftContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+`;
+
+const Prize = styled.p`
+  margin: 0;
+  color: black;
+  font-size: 14px;
+`;
+
+const PrizeAmount = styled.p`
+  margin: 0;
+  color: black;
+  font-size: 24px;
+  font-weight: 600;
 `;
 
 const LowerContent = styled.div`
   padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+`;
+
+const Contents = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+`;
+
+const ContentTitle = styled.p`
+  color: #919499;
+  margin: 0;
+  font-size: 14px;
+`;
+const ContentValue = styled.p`
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+`;
+
+const MainText = styled.span`
+  font-size: 20px;
+  font-weight: 600;
+`;
+
+const SubText = styled.span`
+  font-size: 12px;
+  align-self: flex-end;
+`;
+
+const DepositButton = styled.button`
+  border: none;
+  margin: none;
+  padding: 16px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 15px;
+  margin: 10px 20px 15px;
 `;
 
 const PoolCard = () => {
@@ -65,8 +129,28 @@ const PoolCard = () => {
             <PoolTag>Elite Opportunities</PoolTag>
           </NameAndTag>
         </TopContent>
-        <MiddleContent></MiddleContent>
-        <LowerContent></LowerContent>
+        <MiddleContent>
+          <MiddleLeftContent>
+            <Prize>🏆 Prize upto</Prize>
+            <PrizeAmount>$5,000</PrizeAmount>
+          </MiddleLeftContent>
+        </MiddleContent>
+        <LowerContent>
+          <Contents>
+            <ContentTitle>Win Chance</ContentTitle>
+            <ContentValue>
+              <img src={BarImage} alt="" />
+            </ContentValue>
+          </Contents>
+          <Contents>
+            <ContentTitle>Total deposit till now</ContentTitle>
+            <ContentValue>
+              <MainText>$69.6 Billon</MainText>
+              <SubText>226,064 USDC</SubText>
+            </ContentValue>
+          </Contents>
+        </LowerContent>
+        <DepositButton>Deposit</DepositButton>
       </MainBody>
     </PoolContainer>
   );
