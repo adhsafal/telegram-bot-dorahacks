@@ -3,3 +3,10 @@
   --tg-theme-button-color: #2eaddc;
   --tg-theme-button-text-color: white;
 }
+
+body{
+  margin :0;
+  padding: 0;
+  background-color: #181f27;
+  font-family: Inter;
+}

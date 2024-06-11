@@ -8,17 +8,18 @@ import { Button, FlexBoxCol, FlexBoxRow } from "./components/styled/styled";
 import { useTonConnect } from "./hooks/useTonConnect";
 import { CHAIN } from "@tonconnect/protocol";
 import "@twa-dev/sdk";
+import LogoAndInfo from "./components/LogoAndInfo";
+import PoolCard from "./components/PoolCard";
 
 const StyledApp = styled.div`
-  background-color: #e8e8e8;
+  background-color: #181f27;
   color: black;
 
   @media (prefers-color-scheme: dark) {
-    background-color: #222;
+    background-color: #181f27;
     color: white;
   }
   min-height: 100vh;
-  padding: 20px 20px;
 `;
 
 const AppContainer = styled.div`
@@ -31,10 +32,10 @@ function App() {
 
   return (
     <StyledApp>
-      <h1>Tonpool</h1>
+      <LogoAndInfo />
       <AppContainer>
         <FlexBoxCol>
-          <FlexBoxRow>
+          {/* <FlexBoxRow>
             <TonConnectButton />
             <Button>
               {network
@@ -43,7 +44,8 @@ function App() {
                   : "testnet"
                 : "N/A"}
             </Button>
-          </FlexBoxRow>
+          </FlexBoxRow> */}
+          <PoolCard />
           <Counter />
           <TransferTon />
           <Jetton />
