@@ -1204,11 +1204,17 @@ Values:
   font-weight: 400;
   margin: 0;
   padding: 20px 0px 12px;
+  @media (max-width: 520px) {
+    font-size: 16px;
+  }
 `,Ece=sr.p`
   color: #50b7fc;
   font-size: 30px;
   font-weight: 700;
   margin: 0;
+  @media (max-width: 520px) {
+    font-size: 26px;
+  }
 `,kce=()=>$r(Sce,{children:[Et("img",{src:_ce,alt:""}),Et(Cce,{}),Et(Ace,{children:"Deposit tokens, win prizes"}),Et(Ece,{children:"Withdraw anytime, no loss"})]}),Bce="/telegram-bot-dorahacks/assets/rectangle-208f9b07.svg",Rce="/telegram-bot-dorahacks/assets/bar_img-62edac00.svg",Ice=sr.div`
   width: 100%;
   height: 100%;
