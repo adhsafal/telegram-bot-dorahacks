@@ -10,6 +10,7 @@ import { CHAIN } from "@tonconnect/protocol";
 import "@twa-dev/sdk";
 import LogoAndInfo from "./components/LogoAndInfo";
 import PoolCard from "./components/PoolCard";
+import DepositCard from "./components/DepositCard";
 
 const StyledApp = styled.div`
   background-color: #181f27;
@@ -46,6 +47,7 @@ function App() {
             </Button>
           </FlexBoxRow> */}
           <PoolCard />
+          <DepositCard />
           <Counter />
           <TransferTon />
           <Jetton />
