@@ -38,11 +38,11 @@ const PoolName = styled.p`
   margin: 0;
   font-size: 18px;
 `;
-const PoolTag = styled.p<{ tagBgColor: string, tagColor:string }>`
+const PoolTag = styled.p<{ tagBgColor: string; tagColor: string }>`
   margin: 0;
   font-size: 13px;
   color: ${(props) => props.tagColor};
-  background:  ${(props) => props.tagBgColor};
+  background: ${(props) => props.tagBgColor};
   border-radius: 5px;
 `;
 
@@ -62,13 +62,13 @@ const MiddleLeftContent = styled.div`
 
 const Prize = styled.p`
   margin: 0;
-  color: #181F27;
+  color: #181f27;
   font-size: 12px;
 `;
 
 const PrizeAmount = styled.p`
   margin: 0;
-  color: #181F27;
+  color: #181f27;
   font-size: 24px;
   font-weight: 600;
 `;
@@ -117,13 +117,13 @@ const DepositButton = styled.button`
   font-size: 15px;
   margin: 10px 20px 15px;
 `;
+
 interface TimeLeft {
   days: number;
   hours: number;
   minutes: number;
   seconds: number;
 }
-
 
 const formatTime = (time: number) => String(time).padStart(2, "0");
 
@@ -133,8 +133,8 @@ interface PoolCardProps {
   poolName: string;
   poolTag: string;
   prizeAmount: string;
-  tagColor:string;
-  tagBgColor:string;
+  tagColor: string;
+  tagBgColor: string;
 }
 
 const PoolCard: React.FC<PoolCardProps> = ({
@@ -144,7 +144,7 @@ const PoolCard: React.FC<PoolCardProps> = ({
   poolTag,
   prizeAmount,
   tagColor,
-  tagBgColor
+  tagBgColor,
 }) => {
   const [timeLeft, setTimeLeft] = useState<TimeLeft>(initialTime);
   const countdown = useCallback(() => {
@@ -204,7 +204,13 @@ const PoolCard: React.FC<PoolCardProps> = ({
           <img src={RectangleImage} alt="Rectangle" />
           <NameAndTag>
             <PoolName className="text-white">{poolName}</PoolName>
-            <PoolTag tagColor={tagColor} tagBgColor={tagBgColor} className="text-center max-w-max px-[10px] py-[4px]">{poolTag}</PoolTag>
+            <PoolTag
+              tagColor={tagColor}
+              tagBgColor={tagBgColor}
+              className="text-center max-w-max px-[10px] py-[4px]"
+            >
+              {poolTag}
+            </PoolTag>
           </NameAndTag>
         </TopContent>
         <MiddleContent
