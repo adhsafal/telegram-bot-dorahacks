@@ -13,6 +13,7 @@ import DepositCard from "./page/DepositCard";
 import Account from "./page/Account";
 import WalletConnectedHeader from "./components/WalletConnectedHeader";
 import Pools from "./page/Pools";
+import Prize from "./page/Prize";
 
 const StyledApp = styled.div`
   background-color: #181f27;
@@ -51,6 +52,7 @@ function App() {
           <Pools />
           <DepositCard />
           <Account />
+          <Prize/>
           <Counter />
           <TransferTon />
           <Jetton />
