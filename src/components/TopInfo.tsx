@@ -1,4 +1,4 @@
-// import BackButton from "../images/back_button.svg";
+import BackButton from "../images/back_button.svg";
 
 const TopInfo = () => {
   return (

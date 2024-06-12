@@ -10,6 +10,7 @@ import { CHAIN } from "@tonconnect/protocol";
 import "@twa-dev/sdk";
 import LogoAndInfo from "./components/LogoAndInfo";
 import PoolCard from "./components/PoolCard";
+import DepositCard from "./components/DepositCard";
 
 const StyledApp = styled.div`
   background-color: #181f27;
@@ -20,7 +21,6 @@ const StyledApp = styled.div`
     color: white;
   }
   min-height: 100vh;
-  
 `;
 
 const AppContainer = styled.div`
@@ -88,6 +88,7 @@ function App() {
             tagColor="#6FCFFA"
             tagBgColor="#6FCFFA1A"
           />
+          <DepositCard />
           <Counter />
           <TransferTon />
           <Jetton />
