@@ -3,11 +3,11 @@ import USDC from "../images/usdc.svg";
 
 const Input = () => {
   return (
-    <div className="rounded-2xl border-[1px] border-white-30 bg-[rgba(34, 43, 52, 1)] w-fit h-fit px-4 py-5 bg-[#232a34]">
-      <div className="flex items-center gap-3">
+    <div className="rounded-2xl border-[1px] border-white-30 bg-[rgba(34, 43, 52, 1)] w-full h-fit px-4 py-5 bg-[#232a34]">
+      <div className="flex items-center justify-between">
         <input
           type="number"
-          className="border-none outline-none bg-transparent text-xl"
+          className="border-none outline-none bg-transparent text-xl w-[75%]"
           placeholder="0"
         />
         <div className="flex gap-1">

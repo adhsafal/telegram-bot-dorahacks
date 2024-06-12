@@ -259,7 +259,7 @@ const PoolCard: React.FC<PoolCardProps> = ({
             </ContentValue>
           </Contents>
         </LowerContent>
-        <DepositButton className="bg-white">Deposit</DepositButton>
+        <DepositButton className="bg-white text-black">Deposit</DepositButton>
       </MainBody>
     </PoolContainer>
   );

@@ -9,9 +9,11 @@ import { useTonConnect } from "./hooks/useTonConnect";
 import { CHAIN } from "@tonconnect/protocol";
 import "@twa-dev/sdk";
 import LogoAndInfo from "./components/LogoAndInfo";
-import PoolCard from "./components/PoolCard";
-import DepositCard from "./components/DepositCard";
+import DepositCard from "./page/DepositCard";
 import Account from "./page/Account";
+import WalletConnectedHeader from "./components/WalletConnectedHeader";
+import Pools from "./page/Pools";
+
 const StyledApp = styled.div`
   background-color: #181f27;
   color: black;
@@ -29,11 +31,11 @@ const AppContainer = styled.div`
 `;
 
 function App() {
-  const { network } = useTonConnect();
+  const { connected, network } = useTonConnect();
 
   return (
     <StyledApp className="px-4">
-      <LogoAndInfo />
+      {connected ? <WalletConnectedHeader /> : <LogoAndInfo />}
       <AppContainer>
         <FlexBoxCol>
           {/* <FlexBoxRow>
@@ -46,50 +48,9 @@ function App() {
                 : "N/A"}
             </Button>
           </FlexBoxRow> */}
-          <PoolCard
-            initialTime={{
-              days: 1,
-              hours: 1,
-              minutes: 0,
-              seconds: 0,
-            }}
-            middleContentBgColor="#F7D64B"
-            poolName="VIP Pool"
-            poolTag="Elite Opportunities"
-            prizeAmount="5000"
-            tagColor="#F7D64B"
-            tagBgColor="#F7D64B1A"
-          />
-          <PoolCard
-            initialTime={{
-              days: 0,
-              hours: 8,
-              minutes: 20,
-              seconds: 0,
-            }}
-            middleContentBgColor="#82FBE3"
-            poolName="TON Degen Pool"
-            poolTag="Huge Reward"
-            prizeAmount="5000"
-            tagColor="#82FBE3"
-            tagBgColor="#82FBE31A"
-          />
-          <PoolCard
-            initialTime={{
-              days: 0,
-              hours: 0,
-              minutes: 0,
-              seconds: 5,
-            }}
-            middleContentBgColor="#6FCFFA"
-            poolName="Stable Coin Pool (USDT)"
-            poolTag="Stable Reward"
-            prizeAmount="1000"
-            tagColor="#6FCFFA"
-            tagBgColor="#6FCFFA1A"
-          />
+          <Pools />
           <DepositCard />
-          <Account/>
+          <Account />
           <Counter />
           <TransferTon />
           <Jetton />

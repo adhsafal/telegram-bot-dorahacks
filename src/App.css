@@ -4,9 +4,62 @@
   --tg-theme-button-text-color: white;
 }
 
-body{
-  margin :0;
+body {
+  margin: 0;
   padding: 0;
   background-color: #181f27;
   font-family: Inter;
+}
+
+#ton #ton-connect-button {
+  width: 100% !important;
+}
+
+#ton #ton-connect-button div tc-root div{
+  width: 100%;
+}
+
+#ton #ton-connect-button button {
+  background-color: #ffffff;
+  border: none;
+  outline: none;
+  padding: 16px;
+  border-radius: 8px;
+  margin: 12px 0;
+  height: fit-content !important;
+  width: 100% !important;
+  justify-content: center;
+}
+
+#ton #ton-connect-button button svg {
+  display: none;
+}
+
+#ton #ton-connect-button button div {
+  color: black;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+#connected-btn #ton-connect-button{
+  width: fit-content !important;
+  display: flex;
+  align-items: center;
+}
+
+#connected-btn #ton-connect-button button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  height: fit-content !important;
+  width: 100% !important;
+  justify-content: center;
+  padding:1px !important;
+}
+
+#connected-btn #ton-connect-button button div {
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
 }
