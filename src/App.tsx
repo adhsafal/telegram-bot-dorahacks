@@ -14,6 +14,8 @@ import Account from "./page/Account";
 import WalletConnectedHeader from "./components/WalletConnectedHeader";
 import Pools from "./page/Pools";
 import Prize from "./page/Prize";
+import Redirection from "./page/Redirection";
+import Submitted from "./page/Submitted";
 
 const StyledApp = styled.div`
   background-color: #181f27;
@@ -52,10 +54,13 @@ function App() {
           <Pools />
           <DepositCard />
           <Account />
-          <Prize/>
-          <Counter />
+          <Prize />
+          {/* <Redirection /> */}
+          <Submitted />
+
+          {/* <Counter />
           <TransferTon />
-          <Jetton />
+          <Jetton /> */}
         </FlexBoxCol>
       </AppContainer>
     </StyledApp>
