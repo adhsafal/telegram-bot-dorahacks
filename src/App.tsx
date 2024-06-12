@@ -11,7 +11,7 @@ import "@twa-dev/sdk";
 import LogoAndInfo from "./components/LogoAndInfo";
 import PoolCard from "./components/PoolCard";
 import DepositCard from "./components/DepositCard";
-
+import Account from "./page/Account";
 const StyledApp = styled.div`
   background-color: #181f27;
   color: black;
@@ -89,6 +89,7 @@ function App() {
             tagBgColor="#6FCFFA1A"
           />
           <DepositCard />
+          <Account/>
           <Counter />
           <TransferTon />
           <Jetton />
