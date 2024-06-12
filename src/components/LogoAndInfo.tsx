@@ -1,53 +1,13 @@
-import React from "react";
 import FullLogo from "../images/full_logo.svg";
-import styled from "styled-components";
-
-const Container = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 20px 0px 30px;
-`;
-
-const Line = styled.div`
-  height: 0.8px;
-  background: #ffffff;
-  width: 100%;
-  opacity: 0.4;
-  margin: 10px 0px 20px;
-`;
-
-const SmallText = styled.p`
-  color: #ffffff;
-  font-size: 18px;
-  font-weight: 400;
-  margin: 0;
-  padding: 20px 0px 12px;
-  @media (max-width: 520px) {
-    font-size: 16px;
-  }
-`;
-
-const LargeText = styled.p`
-  color: #50b7fc;
-  font-size: 30px;
-  font-weight: 700;
-  margin: 0;
-  @media (max-width: 520px) {
-    font-size: 26px;
-  }
-`;
+import TopInfo from "./TopInfo";
 
 const LogoAndInfo = () => {
   return (
-    <Container>
+    <div className="w-full flex flex-col justify-center items-center my-5">
       <img src={FullLogo} alt="" />
-      <Line />
-      <SmallText>Deposit tokens, win prizes</SmallText>
-      <LargeText>Withdraw anytime, no loss</LargeText>
-    </Container>
+      <div className="h-[0.5px] bg-white w-full opacity-20 my-5"></div>
+      <TopInfo />
+    </div>
   );
 };
 
