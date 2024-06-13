@@ -1,7 +1,3 @@
-import Timer from "../components/Timer";
-import { MdOutlineKeyboardArrowRight } from "react-icons/md";
-import Lock from "../images/lock.svg";
-import cup from "../images/cup1.svg";
 import cup1 from "../images/cup2.svg";
 import PrizeCard from "../components/PrizeCard";
 export default function Prize() {

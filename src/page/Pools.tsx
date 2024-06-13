@@ -1,4 +1,3 @@
-import React from "react";
 import PoolCard from "../components/PoolCard";
 
 const Pools = () => {
