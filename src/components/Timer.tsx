@@ -57,10 +57,10 @@ export default function Timer({ initialTime }: TimerProps) {
 
   const renderTime = (time: string) => (
     <>
-      <p className="bg-[#181F271A] px-[4px] py-[2px] max-w-max rounded-[4px]">
+      <p className="bg-[#FFFFFF1A] px-[4px] py-[2px] max-w-max rounded-[4px]">
         {time[0]}
       </p>
-      <p className="bg-[#181F271A] px-[4px] py-[2px] max-w-max rounded-[4px]">
+      <p className="bg-[#FFFFFF1A] px-[4px] py-[2px] max-w-max rounded-[4px]">
         {time[1]}
       </p>
     </>
@@ -69,7 +69,7 @@ export default function Timer({ initialTime }: TimerProps) {
   return (
     <>
       <div className="flex flex-col max-w-max">
-        <div className="text-sm leading-normal text-[#181F27] font-semibold flex gap-[2px]">
+        <div className="text-sm leading-normal text-white font-semibold flex gap-[2px]">
           {renderTime(formatTime(timeLeft.days))}
           <p className="px-[4px] py-[2px] max-w-max">:</p>
           {renderTime(formatTime(timeLeft.hours))}
@@ -78,7 +78,7 @@ export default function Timer({ initialTime }: TimerProps) {
           <p className="px-[4px] py-[2px] max-w-max">:</p>
           {renderTime(formatTime(timeLeft.seconds))}
         </div>
-        <div className="flex justify-between text-[#181F27] text-xs font-normal leading-normal">
+        <div className="flex justify-between text-white text-xs font-normal leading-normal">
           <p className="px-2">DAY</p>
           <p className="px-2">HR</p>
           <p className="px-2">MIN</p>

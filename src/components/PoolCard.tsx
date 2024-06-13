@@ -2,6 +2,9 @@ import styled from "styled-components";
 import RectangleImage from "../images/rectangle.svg";
 import BarImage from "../images/bar_img.svg";
 import Timer from "./Timer";
+import { IoIosInformationCircleOutline } from "react-icons/io";
+import { Tooltip } from "antd";
+
 const PoolContainer = styled.div`
   width: 100%;
   height: 100%;
@@ -37,17 +40,22 @@ const PoolName = styled.p`
   margin: 0;
   font-size: 18px;
 `;
-const PoolTag = styled.p<{ tagBgColor: string; tagColor: string }>`
-  margin: 0;
-  font-size: 13px;
-  color: ${(props) => props.tagColor};
-  background: ${(props) => props.tagBgColor};
+const PoolTag = styled.p`
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 18px;
+  background: linear-gradient(92.69deg, #648bf4 0%, #d2597a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
   border-radius: 5px;
+  text-align: center;
 `;
 
 const MiddleContent = styled.div<{ bgColor: string }>`
   height: 80px;
-  background: ${(props) => props.bgColor};
+  background: linear-gradient(92.69deg, #648bf4 0%, #d2597a 100%);
   padding: 16px 20px;
   display: flex;
 `;
@@ -61,13 +69,13 @@ const MiddleLeftContent = styled.div`
 
 const Prize = styled.p`
   margin: 0;
-  color: #181f27;
+  color: white;
   font-size: 12px;
 `;
 
 const PrizeAmount = styled.p`
   margin: 0;
-  color: #181f27;
+  color: white;
   font-size: 24px;
   font-weight: 600;
 `;
@@ -115,6 +123,7 @@ const DepositButton = styled.button`
   font-weight: 700;
   font-size: 15px;
   margin: 10px 20px 15px;
+  
 `;
 
 interface TimeLeft {
@@ -130,8 +139,6 @@ interface PoolCardProps {
   poolName: string;
   poolTag: string;
   prizeAmount: string;
-  tagColor: string;
-  tagBgColor: string;
 }
 
 const PoolCard: React.FC<PoolCardProps> = ({
@@ -140,8 +147,6 @@ const PoolCard: React.FC<PoolCardProps> = ({
   poolName,
   poolTag,
   prizeAmount,
-  tagColor,
-  tagBgColor,
 }) => {
   return (
     <PoolContainer>
@@ -150,13 +155,9 @@ const PoolCard: React.FC<PoolCardProps> = ({
           <img src={RectangleImage} alt="Rectangle" />
           <NameAndTag>
             <PoolName className="text-white">{poolName}</PoolName>
-            <PoolTag
-              tagColor={tagColor}
-              tagBgColor={tagBgColor}
-              className="text-center max-w-max px-[10px] py-[4px]"
-            >
-              {poolTag}
-            </PoolTag>
+            <div className="bg-[#FFFFFF1A] max-w-max text-center  px-[10px] py-[4px] rounded-[4px]">
+              <PoolTag>{poolTag}</PoolTag>
+            </div>
           </NameAndTag>
         </TopContent>
         <MiddleContent
@@ -168,7 +169,7 @@ const PoolCard: React.FC<PoolCardProps> = ({
             <PrizeAmount>${prizeAmount}</PrizeAmount>
           </MiddleLeftContent>
           <div className="flex flex-col justify-center items-end">
-            <p className="text-xs leading-normal font-medium text-[#181F27]">
+            <p className="text-xs leading-normal font-medium text-white">
               will be awarded
             </p>
             <Timer initialTime={initialTime} />
@@ -176,7 +177,16 @@ const PoolCard: React.FC<PoolCardProps> = ({
         </MiddleContent>
         <LowerContent>
           <Contents>
-            <ContentTitle>Win Chance</ContentTitle>
+            <ContentTitle className="flex justify-center items-center gap-2 ">
+              Win Chance{" "}
+              <Tooltip
+                placement="top"
+                title="A vault's relative win chance compared to other vaults"
+                color="white"
+              >
+                <IoIosInformationCircleOutline className="text-[#919499] text-[18px]" />
+              </Tooltip>
+            </ContentTitle>
             <ContentValue>
               <img src={BarImage} alt="Bar" />
             </ContentValue>
@@ -189,7 +199,7 @@ const PoolCard: React.FC<PoolCardProps> = ({
             </ContentValue>
           </Contents>
         </LowerContent>
-        <DepositButton className="bg-white text-black">Deposit</DepositButton>
+        <DepositButton className="bg-[#3E88F7] text-white font-bold text-[15px] leading-normal">Deposit</DepositButton>
       </MainBody>
     </PoolContainer>
   );
