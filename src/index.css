@@ -3,9 +3,21 @@
 @tailwind utilities;
 
 @layer base {
-    input[type="number"]::-webkit-inner-spin-button,
-    input[type="number"]::-webkit-outer-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-    }
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+.ant-tooltip-inner {
+  width: 80% !important;
+  color: #181f27 !important;
+  text-align: center !important;
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  line-height: 15px !important;
+}
+.customGradient{
+  background: linear-gradient(92.69deg, #648BF4 0%, #D2597A 100%);
+
 }
