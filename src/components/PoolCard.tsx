@@ -2,6 +2,7 @@ import styled from "styled-components";
 import RectangleImage from "../images/rectangle.svg";
 import BarImage from "../images/bar_img.svg";
 import Timer from "./Timer";
+import { usePageContext } from "../hooks/usePageContext";
 const PoolContainer = styled.div`
   width: 100%;
   height: 100%;
@@ -143,6 +144,7 @@ const PoolCard: React.FC<PoolCardProps> = ({
   tagColor,
   tagBgColor,
 }) => {
+  const { setPageNumber } = usePageContext();
   return (
     <PoolContainer>
       <MainBody>
@@ -189,7 +191,12 @@ const PoolCard: React.FC<PoolCardProps> = ({
             </ContentValue>
           </Contents>
         </LowerContent>
-        <DepositButton className="bg-white text-black">Deposit</DepositButton>
+        <DepositButton
+          className="bg-white text-black"
+          onClick={() => setPageNumber(1)}
+        >
+          Deposit
+        </DepositButton>
       </MainBody>
     </PoolContainer>
   );

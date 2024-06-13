@@ -1,7 +1,9 @@
+import { useTonConnect } from "../hooks/useTonConnect";
 import FullLogo from "../images/full_logo.svg";
 import TopInfo from "./TopInfo";
 
-const LogoAndInfo = () => {
+const Header = () => {
+  const { connected } = useTonConnect();
   return (
     <div className="w-full flex flex-col justify-center items-center my-5">
       <img src={FullLogo} alt="" />
@@ -11,4 +13,4 @@ const LogoAndInfo = () => {
   );
 };
 
-export default LogoAndInfo;
+export default Header;

@@ -8,7 +8,7 @@ import { Button, FlexBoxCol, FlexBoxRow } from "./components/styled/styled";
 import { useTonConnect } from "./hooks/useTonConnect";
 import { CHAIN } from "@tonconnect/protocol";
 import "@twa-dev/sdk";
-import LogoAndInfo from "./components/LogoAndInfo";
+import Header from "./components/Header";
 import DepositCard from "./page/DepositCard";
 import Account from "./page/Account";
 import WalletConnectedHeader from "./components/WalletConnectedHeader";
@@ -16,6 +16,8 @@ import Pools from "./page/Pools";
 import Prize from "./page/Prize";
 import Redirection from "./page/Redirection";
 import Submitted from "./page/Submitted";
+import { usePageContext } from "./hooks/usePageContext";
+import { useCallback, useEffect } from "react";
 
 const StyledApp = styled.div`
   background-color: #181f27;
@@ -35,10 +37,28 @@ const AppContainer = styled.div`
 
 function App() {
   const { connected, network } = useTonConnect();
+  const { pageNumber, setPageNumber } = usePageContext();
+
+  const handleInitialPagination = useCallback(async () => {
+    if (connected) setPageNumber(2);
+  }, []);
+
+  useEffect(() => {
+    handleInitialPagination();
+  }, []);
+
+  const Pages: any = {
+    0: <Pools />,
+    1: <DepositCard />,
+    2: <Account />,
+    3: <Prize />,
+    4: <Redirection />,
+    5: <Submitted />,
+  };
 
   return (
     <StyledApp className="px-4">
-      {connected ? <WalletConnectedHeader /> : <LogoAndInfo />}
+      {connected ? <WalletConnectedHeader /> : <Header />}
       <AppContainer>
         <FlexBoxCol>
           {/* <FlexBoxRow>
@@ -51,13 +71,12 @@ function App() {
                 : "N/A"}
             </Button>
           </FlexBoxRow> */}
-          <Pools />
+          {Pages[pageNumber]}
+          {/* <Pools />
           <DepositCard />
           <Account />
           <Prize />
-          {/* <Redirection /> */}
-          <Submitted />
-
+          <Submitted /> */}
           {/* <Counter />
           <TransferTon />
           <Jetton /> */}
