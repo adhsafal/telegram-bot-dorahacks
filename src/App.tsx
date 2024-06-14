@@ -8,7 +8,6 @@ import { Button, FlexBoxCol, FlexBoxRow } from "./components/styled/styled";
 import { useTonConnect } from "./hooks/useTonConnect";
 import { CHAIN } from "@tonconnect/protocol";
 import "@twa-dev/sdk";
-import LogoAndInfo from "./components/LogoAndInfo";
 import DepositCard from "./page/DepositCard";
 import Account from "./page/Account";
 import WalletConnectedHeader from "./components/WalletConnectedHeader";
@@ -16,6 +15,11 @@ import Pools from "./page/Pools";
 import Prize from "./page/Prize";
 import Redirection from "./page/Redirection";
 import Submitted from "./page/Submitted";
+import { useCallback, useEffect } from "react";
+import { usePageContext } from "./hooks/usePageContext";
+import Header from "./components/Header";
+import Withdraw from "./page/Withdraw";
+import BackAndTitle from "./components/BackAndTitle";
 
 const StyledApp = styled.div`
   background-color: #181f27;
@@ -35,10 +39,29 @@ const AppContainer = styled.div`
 
 function App() {
   const { connected, network } = useTonConnect();
+  const { pageNumber, setPageNumber } = usePageContext();
+
+  const handleInitialPagination = useCallback(async () => {
+    if (connected) setPageNumber(2);
+  }, []);
+
+  useEffect(() => {
+    handleInitialPagination();
+  }, []);
+
+  const Pages: any = {
+    0: <Pools />,
+    1: <DepositCard />,
+    2: <Account />,
+    3: <Withdraw />,
+    4: <Prize />,
+    5: <Redirection />,
+    6: <Submitted />,
+  };
 
   return (
-    <StyledApp className="px-4">
-      {connected ? <WalletConnectedHeader /> : <LogoAndInfo />}
+    <StyledApp>
+      {connected ? <WalletConnectedHeader /> : <Header />}
       <AppContainer>
         <FlexBoxCol>
           {/* <FlexBoxRow>
@@ -50,11 +73,13 @@ function App() {
                   : "testnet"
                 : "N/A"}
             </Button>
-          </FlexBoxRow> */}
+          // </FlexBoxRow> */}
+          {/* {Pages[pageNumber]} */}
           <Pools />
           <DepositCard />
           <Account />
           <Prize />
+          <Withdraw />
           {/* <Redirection /> */}
           <Submitted />
 

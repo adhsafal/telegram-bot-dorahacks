@@ -2,7 +2,7 @@ import PoolCard from "../components/PoolCard";
 
 const Pools = () => {
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-2 px-4">
       <PoolCard
         initialTime={{
           days: 1,
@@ -15,7 +15,6 @@ const Pools = () => {
         poolTag="Elite Opportunities"
         prizeAmount="5000"
       />
-    
     </div>
   );
 };

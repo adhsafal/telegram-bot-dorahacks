@@ -4,6 +4,7 @@ import BarImage from "../images/bar_img.svg";
 import Timer from "./Timer";
 import { IoIosInformationCircleOutline } from "react-icons/io";
 import { Tooltip } from "antd";
+import { usePageContext } from "../hooks/usePageContext";
 
 const PoolContainer = styled.div`
   width: 100%;
@@ -123,7 +124,6 @@ const DepositButton = styled.button`
   font-weight: 700;
   font-size: 15px;
   margin: 10px 20px 15px;
-  
 `;
 
 interface TimeLeft {
@@ -148,6 +148,7 @@ const PoolCard: React.FC<PoolCardProps> = ({
   poolTag,
   prizeAmount,
 }) => {
+  const { setPageNumber } = usePageContext();
   return (
     <PoolContainer>
       <MainBody>
@@ -199,7 +200,12 @@ const PoolCard: React.FC<PoolCardProps> = ({
             </ContentValue>
           </Contents>
         </LowerContent>
-        <DepositButton className="bg-[#3E88F7] text-white font-bold text-[15px] leading-normal">Deposit</DepositButton>
+        <DepositButton
+          className="bg-[#3E88F7] text-white font-bold text-[15px] leading-normal"
+          onClick={() => setPageNumber(1)}
+        >
+          Deposit
+        </DepositButton>
       </MainBody>
     </PoolContainer>
   );

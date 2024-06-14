@@ -3,8 +3,8 @@ import PrizeCard from "../components/PrizeCard";
 export default function Prize() {
   return (
     <>
-      <div className="w-full h-full flex gap-5 flex-col items-center">
-        <div className=" w-full h-fit bg-[transparent] flex flex-col  gap-[24px]">
+      <div className="w-full h-full flex gap-5 flex-col items-center px-4">
+        <div className="w-[98%] max-w-[420px] h-fit bg-[transparent] flex flex-col rounded-2xl gap-[24px]">
           <div className=" flex flex-col gap-[8px]">
             <p className="text-sm font-normal leading-normal text-[#919499]">
               Total Won
