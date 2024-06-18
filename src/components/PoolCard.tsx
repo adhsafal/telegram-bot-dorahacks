@@ -5,6 +5,7 @@ import Timer from "./Timer";
 import { IoIosInformationCircleOutline } from "react-icons/io";
 import { Tooltip } from "antd";
 import { usePageContext } from "../hooks/usePageContext";
+import PoolsImage from "../images/pools_image.svg";
 
 const PoolContainer = styled.div`
   width: 100%;
@@ -153,7 +154,9 @@ const PoolCard: React.FC<PoolCardProps> = ({
     <PoolContainer>
       <MainBody>
         <TopContent>
-          <img src={RectangleImage} alt="Rectangle" />
+          <div className="bg-white flex items-center justify-center w-[60px] rounded-lg">
+            <img src={PoolsImage} alt="Rectangle" />
+          </div>
           <NameAndTag>
             <PoolName className="text-white">{poolName}</PoolName>
             <div className="bg-[#FFFFFF1A] max-w-max text-center  px-[10px] py-[4px] rounded-[4px]">
