@@ -1,6 +1,8 @@
 import Timer from "../components/Timer";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
+import { usePageContext } from "../hooks/usePageContext";
 export default function Account() {
+  const { setPageNumber } = usePageContext();
   return (
     <>
       <div className="w-full h-full flex gap-5 flex-col items-center px-4">
@@ -17,7 +19,10 @@ export default function Account() {
                 <MdOutlineKeyboardArrowRight className="text-[24px]" />
               </div>
             </div>
-            <p className="text-base underline-gap text-[#3E88F7] font-medium leading-normal w-fit">
+            <p
+              className="text-base underline-gap text-[#3E88F7] font-medium leading-normal w-fit cursor-pointer"
+              onClick={() => setPageNumber(3)}
+            >
               Withdraw
             </p>
           </div>

@@ -6,12 +6,14 @@ import Avatar from "../images/avatar.svg";
 import { useTonConnect } from "../hooks/useTonConnect";
 import isMobile from "is-mobile";
 import TopInfo from "./TopInfo";
+import { usePageContext } from "../hooks/usePageContext";
 
 const WalletConnectedHeader = () => {
   const { connected, network } = useTonConnect();
+  const { pageNumber } = usePageContext();
 
   return (
-    <div className="my-4 flex flex-col">
+    <div className="py-4 flex flex-col">
       <div className="flex justify-between px-4">
         <img src={isMobile() ? SmallLogo : FullLogo} alt="" />
         {connected && (
@@ -22,9 +24,11 @@ const WalletConnectedHeader = () => {
         )}
       </div>
       <div className="h-[0.5px] bg-white w-full opacity-20 my-4"></div>
-      {/* <div className="w-full flex flex-col justify-center items-center my-5">
-        <TopInfo />
-      </div> */}
+      {pageNumber < 2 && (
+        <div className="w-full flex flex-col justify-center items-center my-5">
+          <TopInfo />
+        </div>
+      )}
     </div>
   );
 };

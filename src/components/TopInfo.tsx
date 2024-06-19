@@ -15,9 +15,9 @@ const TopInfo = () => {
         </p>
       </div>
     );
-  else
+  else if (pageNumber === 1)
     return (
-      <div className="w-full max-w-[420px] flex flex-col gap-3 justify-center items-center px-4">
+      <div className="w-full max-w-[420px] flex flex-col gap-3 justify-center items-center px-4 sm:px-0">
         <img
           src={BackButton}
           alt=""
@@ -29,6 +29,7 @@ const TopInfo = () => {
         </p>
       </div>
     );
+  else return <></>;
 };
 
 export default TopInfo;

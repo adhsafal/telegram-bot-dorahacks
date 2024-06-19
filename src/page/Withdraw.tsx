@@ -1,12 +1,14 @@
 import React from "react";
 import BackAndTitle from "../components/BackAndTitle";
+import { usePageContext } from "../hooks/usePageContext";
 
 const Withdraw = () => {
+  const { pageNumber, setPageNumber } = usePageContext();
   return (
     <>
       <BackAndTitle title={"Manage your withdraw"} />
       <div className="w-full f-full flex gap-5 flex-col items-center px-4">
-        <div className="w-[98%]  h-[600px] sm:h-fit max-w-[420px] bg-[transparent] flex flex-col justify-between sm:justify-normal rounded-2xl">
+        <div className="w-[98%]  h-[700px] sm:h-fit max-w-[420px] bg-[transparent] flex flex-col justify-between sm:justify-normal rounded-2xl">
           <div className="flex flex-col">
             <p className="mb-2 text-[#8A8F92] text-[14px]">
               Enter amount to withdraw
@@ -24,8 +26,16 @@ const Withdraw = () => {
               <p className="text-[#8A8F92] text-[14px]">Total Balance</p>
               <p className="font-bold">988.30 USDC</p>
             </div>
+            <div className="h-[0.5px] bg-white w-full opacity-20 my-4"></div>
+            <div>
+              <p className="text-[#8A8F92] text-[14px] mb-1">Address</p>
+              <p className="text-sm">momFct4QWxrtwXGE4oswzKZwnXc2gpSqvR</p>
+            </div>
           </div>
-          <button className="border-none outline-none p-4 rounded-lg font-bold text-base bg-[#3E88F7] text-white my-6">
+          <button
+            className="border-none outline-none p-4 rounded-lg font-bold text-base bg-[#3E88F7] text-white my-6"
+            onClick={() => setPageNumber(pageNumber + 1)}
+          >
             Withdraw Request
           </button>
         </div>

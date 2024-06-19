@@ -74,13 +74,13 @@ function App() {
                 : "N/A"}
             </Button>
           // </FlexBoxRow> */}
-          {/* {Pages[pageNumber]} */}
-          <Pools />
+          {Pages[pageNumber]}
+          {/* <Pools /> */}
           <DepositCard />
           <Account />
           <Prize />
           <Withdraw />
-          {/* <Redirection /> */}
+          <Redirection />
           <Submitted />
 
           {/* <Counter />

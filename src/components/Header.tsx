@@ -5,7 +5,7 @@ import TopInfo from "./TopInfo";
 const Header = () => {
   const { connected } = useTonConnect();
   return (
-    <div className="w-full flex flex-col justify-center items-center my-5">
+    <div className="w-full flex flex-col justify-center items-center py-5">
       <img src={FullLogo} alt="" />
       <div className="h-[0.5px] bg-white w-full opacity-20 my-5"></div>
       <TopInfo />
