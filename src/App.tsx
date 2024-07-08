@@ -20,6 +20,9 @@ import { usePageContext } from "./hooks/usePageContext";
 import Header from "./components/Header";
 import Withdraw from "./page/Withdraw";
 import BackAndTitle from "./components/BackAndTitle";
+import Dashboard from "./page/Dashboard";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import MainApp from "./page/MainApp";
 
 const StyledApp = styled.div`
   background-color: #181f27;
@@ -60,35 +63,42 @@ function App() {
   };
 
   return (
-    <StyledApp>
-      {connected ? <WalletConnectedHeader /> : <Header />}
-      <AppContainer>
-        <FlexBoxCol>
-          {/* <FlexBoxRow>
-            <TonConnectButton />
-            <Button>
-              {network
-                ? network === CHAIN.MAINNET
-                  ? "mainnet"
-                  : "testnet"
-                : "N/A"}
-            </Button>
-          // </FlexBoxRow> */}
-          {Pages[pageNumber]}
-          {/* <Pools /> */}
-          <DepositCard />
-          <Account />
-          <Prize />
-          <Withdraw />
-          <Redirection />
-          <Submitted />
+    // <StyledApp>
+    //   {connected ? <WalletConnectedHeader /> : <Header />}
+    //   <AppContainer>
+    //     <FlexBoxCol>
+    //       {/* <FlexBoxRow>
+    //         <TonConnectButton />
+    //         <Button>
+    //           {network
+    //             ? network === CHAIN.MAINNET
+    //               ? "mainnet"
+    //               : "testnet"
+    //             : "N/A"}
+    //         </Button>
+    //       // </FlexBoxRow> */}
+    //       {Pages[pageNumber]}
+    //       {/* <Pools /> */}
+    //       <DepositCard />
+    //       <Account />
+    //       <Prize />
+    //       <Withdraw />
+    //       <Redirection />
+    //       <Submitted />
 
-          {/* <Counter />
-          <TransferTon />
-          <Jetton /> */}
-        </FlexBoxCol>
-      </AppContainer>
-    </StyledApp>
+    //       {/* <Counter />
+    //       <TransferTon />
+    //       <Jetton /> */}
+    //     </FlexBoxCol>
+    //   </AppContainer>
+    // </StyledApp>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/app" element={<MainApp />} />
+      </Routes>
+    </BrowserRouter>
+    // <Dashboard />
   );
 }
 
