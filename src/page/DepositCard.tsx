@@ -13,7 +13,7 @@ const DepositCard = () => {
   return (
     <div className="w-full h-full flex gap-5 flex-col items-center px-4">
       <div className="w-[98%] max-w-[420px] h-fit bg-[transparent] flex flex-col rounded-2xl">
-        <div className="h-[600px] sm:h-fit">
+        <div className="h-fit sm:h-[600px]">
           <Input />
           <InfoList />
           <RiskInfoCard />

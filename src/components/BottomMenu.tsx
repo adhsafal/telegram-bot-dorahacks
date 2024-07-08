@@ -29,7 +29,7 @@ const BottomMenu = () => {
   ];
 
   return (
-    <div className="w-full h-full flex gap-5 flex-col items-center">
+    <div className="w-full h-full flex gap-5 flex-col items-center justify-end">
       <div className="w-[98%] max-w-[420px] h-fit bg-[transparent] flex flex-col rounded-3xl">
         <div className="rounded-2xl bg-[#517da2] h-fit py-4 px-6 flex items-start justify-between">
           {MenuOptions.map((items) => (

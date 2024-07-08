@@ -64,7 +64,7 @@ function MainApp() {
   return (
     <StyledApp>
       {connected ? <WalletConnectedHeader /> : <Header />}
-      <AppContainer>
+      <AppContainer className="sm:h-[700px]">
         <FlexBoxCol>
           {/* <FlexBoxRow>
             <TonConnectButton />
@@ -78,12 +78,12 @@ function MainApp() {
           // </FlexBoxRow> */}
           {Pages[pageNumber]}
           {/* <Pools /> */}
-          <DepositCard />
-          <Account />
-          <Prize />
-          <Withdraw />
-          <Redirection />
-          <Submitted />
+          {/* <DepositCard /> */}
+          {/* <Account /> */}
+          {/* <Prize /> */}
+          {/* <Withdraw /> */}
+          {/* <Redirection /> */}
+          {/* <Submitted /> */}
 
           {/* <Counter />
           <TransferTon />
