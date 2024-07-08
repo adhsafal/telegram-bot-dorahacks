@@ -6,6 +6,7 @@ import { useTonConnect } from "./useTonConnect";
 import { Address, OpenedContract } from "ton-core";
 import { useQuery } from "@tanstack/react-query";
 import { CHAIN } from "@tonconnect/protocol";
+import { Tonpool } from "../contracts/tonPoolContract";
 
 export function useCounterContract() {
   const { client } = useTonClient();
