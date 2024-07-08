@@ -214,8 +214,8 @@ const Dashboard: any = () => {
                 ))}
               </div>
             </div>
-            <div className=" text-center h-[44px] sm:h-[64px] flex items-center justify-center bg-[#EE4D37] ">
-              <p className=" font-normal text-[14px] leading-[20px] text-white">
+            <div className="text-center h-[44px] sm:h-[64px] flex items-center justify-center bg-[#EE4D37] ">
+              <p className="font-normal text-[14px] leading-[20px] text-white sm:px-2">
                 Non-winners retain their staked amount and can participate in
                 future draws.
               </p>
