@@ -15,14 +15,14 @@ const Dashboard: any = () => {
           <div className="  z-10  px-[46px] pt-[46px] flex items-center justify-between sm:justify-center">
             <img src={FullLogo} alt="logo" />
             <div className=" sm:hidden">
-              <button
+              {/* <button
                 className="w-[180px] h-[48px] flex items-center justify-center rounded-[8px] !bg-white"
                 onClick={handleUseTonPool}
               >
                 <p className=" font-semibold text-[18px] leading-[26px] public-sans">
                   Use Tonpool
                 </p>
-              </button>
+              </button> */}
             </div>
           </div>
           <div className="     w-full pt-[169px] sm:pt-[97px]  flex items-center flex-col justify-center ">
@@ -59,7 +59,7 @@ const Dashboard: any = () => {
               </div>
               <button className="mt-[42px] w-[296px] h-[58px] sm:h-[48px] flex items-center justify-center rounded-[8px] !bg-white">
                 <p className=" uppercase font-semibold text-[18px] public-sans leading-[26px] sm:text-[15px] sm:leading-[26px]">
-                  Join the POOL
+                  Coming soon
                 </p>
               </button>
               <div className=" py-[180px] sm:pt-[80px] sm:pb-[120px] px-[16px] text-center flex flex-col items-center justify-center">
