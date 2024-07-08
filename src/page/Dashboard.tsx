@@ -3,7 +3,7 @@ import Footer from "../components/Footer";
 import { CardData, cardType, howToParticipate, quickStep } from "../helper";
 import FullLogo from "../images/full_logo.svg";
 
-export default function Dashboard() {
+export const Dashboard: any = () => {
   const navigate = useNavigate();
   const handleUseTonPool = () => {
     navigate("/app");
@@ -228,7 +228,7 @@ export default function Dashboard() {
       </div>
     </section>
   );
-}
+};
 
 const arrow = (
   <svg
