@@ -23,7 +23,7 @@ import BackAndTitle from "../components/BackAndTitle";
 import Dashboard from "./Dashboard";
 import DepositCard from "./DepositCard";
 import { useTonClient } from "../hooks/useTonClient";
-import { useTonPoolContract } from "../hooks/useTonPoolContract";
+// import { useTonPoolContract } from "../hooks/useTonPoolContract";
 
 const StyledApp = styled.div`
   background-color: #181f27;

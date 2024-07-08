@@ -6,7 +6,7 @@ import { IoIosInformationCircleOutline } from "react-icons/io";
 import { Tooltip } from "antd";
 import { usePageContext } from "../hooks/usePageContext";
 import PoolsImage from "../images/pools_image.svg";
-import { useDeposit } from "../hooks/useDeposit";
+// import { useDeposit } from "../hooks/useDeposit";
 
 const PoolContainer = styled.div`
   width: 100%;
@@ -151,10 +151,10 @@ const PoolCard: React.FC<PoolCardProps> = ({
   prizeAmount,
 }) => {
   const { setPageNumber } = usePageContext();
-  const { makeDeposit } = useDeposit();
+  // const { makeDeposit } = useDeposit();
 
   const handleDepositClick = () => {
-    makeDeposit(3354);
+    // makeDeposit(3354);
     // setPageNumber(1);
   };
   return (
