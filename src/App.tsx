@@ -20,9 +20,9 @@ import { usePageContext } from "./hooks/usePageContext";
 import Header from "./components/Header";
 import Withdraw from "./page/Withdraw";
 import BackAndTitle from "./components/BackAndTitle";
-import Dashboard from "./page/Dashboard";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import MainApp from "./page/MainApp";
+import Dashboard from "./page/Dashboard";
 
 const StyledApp = styled.div`
   background-color: #181f27;
