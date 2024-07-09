@@ -90,7 +90,7 @@ const Dashboard: any = () => {
       </article>
 
       <section className=" px-[100px] mt-[110px] sm:mt-[33px] sm:px-[40px]">
-        <article className=" grid grid-cols-4 sm:grid-cols-1 items-center gap-x-[40px] sm:gap-y-[24px] lg:flex lg:flex-col lg:gap-y-[40px]">
+        <article className=" grid grid-cols-4 sm:grid-cols-1 items-start gap-x-[40px] sm:gap-y-[24px] md:items-center lg:flex lg:flex-col lg:items-center  lg:gap-y-[40px] ">
           {CardData.map((item: cardType) => (
             <div
               key={item.title}
