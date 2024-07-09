@@ -1,22 +1,22 @@
 import { useTonConnect } from "./useTonConnect";
 import { getTonPoolContract } from "./getTonPoolContract";
 
-export function useDeposit() {
+export function useWithdraw() {
   const { sender } = useTonConnect();
 
   const tonPoolContract = getTonPoolContract();
 
-  const makeDeposit = async (amount: number) => {
+  const makeWithdraw = async (amount: number) => {
     if (!tonPoolContract)
       throw new Error("TonPool contract is not initialized");
 
     const amt = BigInt(amount);
-    console.log("amt", amt);
+    console.log(amt);
     const withdrawMessage: {
-      $$type: "Deposit";
+      $$type: "Withdraw";
       amount: bigint;
     } = {
-      $$type: "Deposit",
+      $$type: "Withdraw",
       amount: amt,
     };
     const args = {
@@ -29,6 +29,6 @@ export function useDeposit() {
   };
 
   return {
-    makeDeposit,
+    makeWithdraw,
   };
 }

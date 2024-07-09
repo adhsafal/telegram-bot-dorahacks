@@ -1,28 +1,12 @@
-import { useTonClient } from "./useTonClient";
-import { useAsyncInitialize } from "./useAsyncInitialize";
 import { useTonConnect } from "./useTonConnect";
-import { Address, OpenedContract } from "ton-core";
+import { Address } from "ton-core";
 import { useQuery } from "@tanstack/react-query";
-import { CHAIN } from "@tonconnect/protocol";
-import { Tonpool } from "../contracts/tonPoolContract";
+import { getTonPoolContract } from "./getTonPoolContract";
 
-export function useTonPoolContract() {
-  const { client } = useTonClient();
-  const { sender, network, wallet } = useTonConnect();
+export function useTonPoolDetails() {
+  const { wallet } = useTonConnect();
 
-  //   const address = "EQDoEr6PFkbvIv_DONMajuoGSlxiF8ndwzxsVM1PUBt9w6xG";
-
-  const tonPoolContract = useAsyncInitialize(async () => {
-    if (!client) return;
-    const contract = new Tonpool(
-      Address.parse(
-        network === CHAIN.MAINNET
-          ? "EQCgbValz3m_OXNiSw4XifXW0XoYo2VyPNzE-Lfr6nbK74sZ"
-          : "EQCgbValz3m_OXNiSw4XifXW0XoYo2VyPNzE-Lfr6nbK74sZ"
-      ) // replace with your address from tutorial 2 step 8
-    );
-    return client.open(contract) as OpenedContract<Tonpool>;
-  }, [client]);
+  const tonPoolContract = getTonPoolContract();
 
   const { data: balanceDetails, isFetching: isFetchingBalance } = useQuery(
     ["balanceDetails"],

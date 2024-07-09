@@ -1,14 +1,20 @@
 import React from "react";
 import BackAndTitle from "../components/BackAndTitle";
 import { usePageContext } from "../hooks/usePageContext";
+import { useWithdraw } from "../hooks/useWithdraw";
 
 const Withdraw = () => {
   const { pageNumber, setPageNumber } = usePageContext();
+  const { makeWithdraw } = useWithdraw();
+  const handleWithdraw = () => {
+    makeWithdraw(1);
+    // setPageNumber(pageNumber + 1);
+  };
   return (
     <>
       <BackAndTitle title={"Manage your withdraw"} />
       <div className="w-full f-full flex gap-5 flex-col items-center px-4">
-        <div className="w-[98%]  h-[700px] sm:h-fit max-w-[420px] bg-[transparent] flex flex-col justify-between sm:justify-normal rounded-2xl">
+        <div className="w-[98%]  h-fit sm:h-[600px] max-w-[420px] bg-[transparent] flex flex-col justify-between sm:justify-normal rounded-2xl">
           <div className="flex flex-col">
             <p className="mb-2 text-[#8A8F92] text-[14px]">
               Enter amount to withdraw
@@ -34,7 +40,7 @@ const Withdraw = () => {
           </div>
           <button
             className="border-none outline-none p-4 rounded-lg font-bold text-base bg-[#3E88F7] text-white my-6"
-            onClick={() => setPageNumber(pageNumber + 1)}
+            onClick={handleWithdraw}
           >
             Withdraw Request
           </button>

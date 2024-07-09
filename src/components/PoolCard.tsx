@@ -154,8 +154,8 @@ const PoolCard: React.FC<PoolCardProps> = ({
   const { makeDeposit } = useDeposit();
 
   const handleDepositClick = () => {
-    makeDeposit(3354);
-    // setPageNumber(1);
+    // makeDeposit(3354);
+    setPageNumber(1);
   };
   return (
     <PoolContainer>
