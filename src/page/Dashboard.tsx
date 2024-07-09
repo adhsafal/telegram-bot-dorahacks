@@ -44,14 +44,14 @@ const Dashboard: any = () => {
               </p>
             </div>
             <div className=" flex flex-col justify-center items-center mt-[14px] sm:mt-[46px]">
-              <p className=" font-bold text-[80px] sm:text-[24px] sm:leading-[30px] leading-[96px] text-[#3E88F7]">
+              <p className=" font-bold text-[80px] sm:text-[24px] md:text-[50px] lg:text-[60px] sm:leading-[30px] leading-[96px] text-[#3E88F7]">
                 Stake Smart, Win Big
               </p>
-              <p className="my-[8px] font-normal text-white text-[80px] leading-[96px] sm:text-[18px] sm:leading-[28px]">
+              <p className="my-[8px] font-normal text-white text-[80px] leading-[96px] sm:text-[18px] md:text-[50px] lg:text-[60px] sm:leading-[28px]">
                 With Zero Risk!
               </p>
-              <div className=" w-[1016px] sm:w-[298px]">
-                <p className=" font-normal text-[24px] leading-[29px] text-white/50 text-center sm:text-[12px] sm:leading-[18px]">
+              <div className=" w-[1016px] sm:w-[298px] lg:w-[550px]">
+                <p className=" font-normal text-[24px] leading-[29px] text-white/50 text-center sm:text-[12px] lg:text-[20px] sm:leading-[18px]">
                   join no-loss Ton Pools and connect with a like-minded
                   community through dedicated Telegram pool groups on the TON
                   Blockchain.
@@ -90,7 +90,7 @@ const Dashboard: any = () => {
       </article>
 
       <section className=" px-[100px] mt-[110px] sm:mt-[33px] sm:px-[40px]">
-        <article className=" grid grid-cols-4 sm:grid-cols-1 items-center gap-x-[40px] sm:gap-y-[24px]">
+        <article className=" grid grid-cols-4 sm:grid-cols-1 items-center gap-x-[40px] sm:gap-y-[24px] lg:flex lg:flex-col lg:gap-y-[40px]">
           {CardData.map((item: cardType) => (
             <div
               key={item.title}
@@ -99,7 +99,7 @@ const Dashboard: any = () => {
               <img
                 src={item.img as string}
                 alt={item?.title}
-                className=" !w-full object-cover"
+                className=" !w-full object-fill"
                 height={214}
               />
               <div className="text-center flex flex-col gap-y-[12px]">
@@ -114,7 +114,7 @@ const Dashboard: any = () => {
           ))}
         </article>
       </section>
-      <section className="mt-[159px] px-[220px] sm:px-[16px]">
+      <section className="mt-[159px] px-[220px] lg:px-[16px]">
         <article>
           <div className=" text-center flex flex-col gap-y-[16px]">
             <p className=" font-normal sm:font-light text-[20px] leading-[24px] text-white/50 sm:text-[12px] sm:leading-[18px]">
